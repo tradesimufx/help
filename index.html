@@ -285,42 +285,74 @@
 
     /* スマホ対応 */
     @media (max-width: 800px) {
+      /* 全体を上下レイアウトに */
       .layout {
         flex-direction: column;
       }
+
+      /* サイドバーは「普通の縦並び」に戻す */
       .sidebar {
         width: 100%;
         position: static;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
+        display: block;              /* ★ 1列表示 */
         border-right: none;
         border-bottom: 1px solid var(--border);
+        padding: 12px 10px;
       }
+    
+      /* スマホではグループ見出し（基本／機能別…）は非表示 */
       .nav-section-title {
         display: none;
       }
+    
+      /* タイトルとサブタイトルの余白だけ少し調整 */
+      .app-title {
+        font-size: 17px;
+        margin-bottom: 2px;
+      }
+      .app-subtitle {
+        margin-bottom: 10px;
+      }
+    
+      /* メニュー項目は全て縦1列で全幅 */
+      .nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    
+      .nav-item {
+        margin: 2px 0;
+      }
+    
       .nav-button {
-        flex: 1 1 auto;
+        width: 100%;
         font-size: 15px;
         padding: 10px;
       }
+    
+      /* 本文側は画面いっぱいに */
       .content {
         padding: 10px;
       }
+    
       .content-inner {
         padding: 18px 14px 24px;
-        border-radius: 0;     /* ← カード感を減らして横いっぱいに */
-        max-width: 100%;      /* ← 右側の余白を消す */
-        margin: 0;            /* ← 余白なしで広げる */
-        border-left: none;    /* お好みで */
-        border-right: none;   /* お好みで */
+        border-radius: 0;        /* カード角丸を消して */
+        max-width: 100%;         /* 右の余白をなくす */
+        margin: 0;
+        border-left: none;
+        border-right: none;
       }
+    
       h1 {
         font-size: 20px;
       }
-      p, ul, ol {
-        font-size: 15px;      /* ← 本文も少し大きく */
+    
+      p,
+      ul,
+      ol {
+        font-size: 15px;
       }
     }
 
