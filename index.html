@@ -303,17 +303,25 @@
       }
       .nav-button {
         flex: 1 1 auto;
-        font-size: 13px;
+        font-size: 15px;
+        padding: 10px;
       }
       .content {
-        padding: 14px;
+        padding: 10px;
       }
       .content-inner {
         padding: 18px 14px 24px;
-        border-radius: 10px;
+        border-radius: 0;     /* ← カード感を減らして横いっぱいに */
+        max-width: 100%;      /* ← 右側の余白を消す */
+        margin: 0;            /* ← 余白なしで広げる */
+        border-left: none;    /* お好みで */
+        border-right: none;   /* お好みで */
       }
       h1 {
         font-size: 20px;
+      }
+      p, ul, ol {
+        font-size: 15px;      /* ← 本文も少し大きく */
       }
     }
 
